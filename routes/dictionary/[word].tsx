@@ -1,4 +1,5 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
+import PhoneticsComponent from "../../components/PhoneticsComponent.tsx";
 import { Dictionary, getMeanings } from "../../utils/dictionaryAPI.ts";
 
 
@@ -13,9 +14,7 @@ export const handler:Handlers = {
 
 export default (props:PageProps<Dictionary>) => {
     const {word, meanings, phonetics} = props.data
-    return(
-        <div>
-            
-        </div>
+    return (
+        <PhoneticsComponent Phonetics = {phonetics}/> 
     )
 }
