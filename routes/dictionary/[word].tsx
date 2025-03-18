@@ -1,32 +1,20 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
-
-
-
-
-type Data = {
-    word: string, 
-    phonetic: string, 
-    meanings: string[],   
-}
+import { Dictionary, getMeanings } from "../../utils/dictionaryAPI.ts";
 
 
 export const handler:Handlers = {
-    GET: async (_req: Request, ctx: FreshContext <unknown, Data>) => {
+    GET: async (_req: Request, ctx: FreshContext <unknown, Dictionary>) => {
         const {word} = ctx.params;
-        const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+        const dictionary:Dictionary = await getMeanings(word)
+        return ctx.render(dictionary)
 
-        try {
-            
-        } catch (error) {
-            return new Response("Error: " + error); 
-        }
     }
 }
 
-export default (props:PageProps) => {
+export default (props:PageProps<Dictionary>) => {
     return(
         <div>
-            buenas
+            <p>{props.data.meanings.map(e => e.partOfSpeech)}</p>
         </div>
     )
 }
