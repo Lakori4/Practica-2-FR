@@ -1,4 +1,4 @@
-import { FreshContext, Handlers } from "$fresh/server.ts";
+import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 
 
 
@@ -21,4 +21,12 @@ export const handler:Handlers = {
             return new Response("Error: " + error); 
         }
     }
+}
+
+export default (props:PageProps) => {
+    return(
+        <div>
+            buenas
+        </div>
+    )
 }

@@ -5,7 +5,7 @@ export const handler: Handlers = {
     const form = await req.formData();
     const word = form.get("word")
     const headers = new Headers()
-    headers.set("location", `/directory/${word}`);
+    headers.set("location", `/dictionary/${word}`);
     return new Response(null, {
       status: 303,
       headers,
