@@ -12,9 +12,10 @@ export const handler:Handlers = {
 }
 
 export default (props:PageProps<Dictionary>) => {
+    const {word, meanings, phonetics} = props.data
     return(
         <div>
-            <p>{props.data.meanings.map(e => e.partOfSpeech)}</p>
+            
         </div>
     )
 }
