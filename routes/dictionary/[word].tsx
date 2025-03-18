@@ -1,4 +1,5 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
+import MeaningsComponent from "../../components/MeaningsComponents.tsx";
 import { Dictionary, getMeanings } from "../../utils/dictionaryAPI.ts";
 
 
@@ -15,7 +16,8 @@ export default (props:PageProps<Dictionary>) => {
     const {word, meanings, phonetics} = props.data
     return(
         <div>
-            
+
+            <MeaningsComponent Meanings = {meanings}/>
         </div>
     )
 }

@@ -9,6 +9,8 @@ export type Meanings = {
     definitions: {
         definition: string
     }[]
+    synonyms: string []
+    antonyms: string []
 }[]
 
 type DictionaryAPI = {
