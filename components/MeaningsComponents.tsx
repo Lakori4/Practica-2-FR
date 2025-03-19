@@ -6,7 +6,7 @@ import { Meanings } from "../utils/dictionaryAPI.ts";
 const MeaningsComponent:FunctionalComponent<Meanings> = (props) => {
     const {partOfSpeech, definitions, synonyms, antonyms} = props
     return (
-        <div class="meaningComponent">
+        <div class="Meaning_component">
             
             <h2>Definitions for part of speech: {partOfSpeech}</h2> 
             <ol>
