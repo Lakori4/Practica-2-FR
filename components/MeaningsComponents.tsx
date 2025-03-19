@@ -5,31 +5,37 @@ import { Meanings } from "../utils/dictionaryAPI.ts";
 
 const MeaningsComponent:FunctionalComponent<Meanings> = (props) => {
     const {partOfSpeech, definitions, synonyms, antonyms} = props
-    console.log(definitions);
     return (
         <div class="meaningComponent">
             
-            <h1>Definitions for part of speech: {partOfSpeech}</h1> 
+            <h2>Definitions for part of speech: {partOfSpeech}</h2> 
             <ol>
-                {definitions.map(e => { return <li><h2>{e.definition}</h2>
+                {definitions.map(e => { return <li><h3>{e.definition}</h3>
                     { e.synonyms.length !== 0 ? <div class="defSynonyms">
-                        <h3>Synonyms</h3> <ul>
+                        <h4>Synonyms</h4> <ul>
                         {e.synonyms.map(e => { return <li>{e}</li>})}
                         </ul></div>: null 
                     }
                     { e.antonyms.length !== 0 ? <div class="defAntonyms">
-                        <h3>Antonyms</h3> <ul>
+                        <h4>Antonyms</h4> <ul>
                         {e.antonyms.map(e => { return <li>{e}</li>})}
                         </ul></div>: null 
                     }
-                    
-
-                     
+                    { e.example ? <h4>Example: {e.example}</h4>: null}                     
                 </li>})}
             </ol>
             
-            <h3>{synonyms}</h3>
-            <h3>{antonyms}</h3>
+            {synonyms.length ? <div><h2>Synonyms</h2>
+                <ol>
+                    {synonyms.map(e => { return <li><h4>{e}</h4></li>})}
+                </ol></div>
+            : null}
+
+            {antonyms.length ? <div><h2>Antonyms</h2>
+                <ol>
+                    {antonyms.map(e => { return <li><h4>{e}</h4></li>})}
+                </ol></div>
+            : null}
         </div>
     ) 
 }
