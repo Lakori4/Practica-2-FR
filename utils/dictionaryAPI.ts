@@ -19,6 +19,10 @@ type DictionaryAPI = {
     meanings: Meanings[]
 }[]
 
+type DictionaryErrorAPi = {
+    title: string
+}
+
 export type Dictionary = {
     word: string
     phonetics: Phonetics[]

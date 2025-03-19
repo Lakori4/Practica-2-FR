@@ -3,7 +3,8 @@ import { Handlers } from "$fresh/server.ts";
 export const handler: Handlers = {
    POST: async (req, _ctx) => {
     const form = await req.formData();
-    const word = form.get("word")
+    let word = form.get("word")
+    if (word === "") word = "troll" 
     const headers = new Headers()
     headers.set("location", `/dictionary/${word}`);
     return new Response(null, {
