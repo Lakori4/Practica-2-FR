@@ -9,14 +9,23 @@ const MeaningsComponent:FunctionalComponent<Meanings> = (props) => {
     return (
         <div class="meaningComponent">
             
-            <h1>Definitions for part of speech: {partOfSpeech}</h1>
+            <h1>Definitions for part of speech: {partOfSpeech}</h1> 
             <ol>
-                {definitions.map(e => <li>{e.definition}
+                {definitions.map(e => { return <li><h2>{e.definition}</h2>
+                    { e.synonyms.length !== 0 ? <div class="defSynonyms">
+                        <h3>Synonyms</h3> <ul>
+                        {e.synonyms.map(e => { return <li>{e}</li>})}
+                        </ul></div>: null 
+                    }
+                    { e.antonyms.length !== 0 ? <div class="defAntonyms">
+                        <h3>Antonyms</h3> <ul>
+                        {e.antonyms.map(e => { return <li>{e}</li>})}
+                        </ul></div>: null 
+                    }
                     
-{/*                     <br/>
-                    <br>
-                    { e.synonyms.length !== 0 ? <h3>Synonyms</h3> } */}
-                </li>)}
+
+                     
+                </li>})}
             </ol>
             
             <h3>{synonyms}</h3>
