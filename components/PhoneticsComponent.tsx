@@ -7,9 +7,10 @@ const PhoneticsComponent:FunctionalComponent<Phonetics> = (props) => {
     const { audio, text, sourceUrl} = props
     return(
         <div class="Phonetics_component">
-            {text !== undefined ? <h3>Text: {text}</h3> : null}
-            {audio !== "" ? <audio key="audio" controls><source src={audio} type="audio/ogg"></source></audio> : null}
-            {sourceUrl !== undefined ? <p>SourceUrl: {sourceUrl}</p> : null}
+            <h3>Text: {text !== undefined ? text : "No available"}</h3>
+            {audio !== "" ? <audio key="audio" controls><source src={audio} type="audio/ogg"></source></audio> : <p>Audio no available</p>}
+            <p>SourceUrl: {sourceUrl !== undefined ? sourceUrl : "No available"}</p>
+            
         </div>
     )
 }
