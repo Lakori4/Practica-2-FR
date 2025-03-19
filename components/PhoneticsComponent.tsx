@@ -2,17 +2,14 @@
 import { FunctionalComponent } from "preact/src/index.d.ts";
 import { Phonetics } from "../utils/dictionaryAPI.ts";
 
-type Props = {
-    Phonetics: Phonetics
-}
 
-const PhoneticsComponent:FunctionalComponent<Props> = (props) => {
-    const phonetics = props.Phonetics
+const PhoneticsComponent:FunctionalComponent<Phonetics> = (props) => {
+    const { audio, text, sourceUrl} = props
     return(
-        <div>
-            <div>
-                {phonetics.map(e => e.audio !== "" ? <audio key="audio" controls autoplay><source src={e.audio} type="audio/ogg"></source></audio> : null)}
-            </div>
+        <div class="Phonetics_component">
+            {text !== undefined ? <h3>Text: {text}</h3> : null}
+            {audio !== "" ? <audio key="audio" controls><source src={audio} type="audio/ogg"></source></audio> : null}
+            {sourceUrl !== undefined ? <p>SourceUrl: {sourceUrl}</p> : null}
         </div>
     )
 }

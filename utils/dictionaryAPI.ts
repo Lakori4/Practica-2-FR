@@ -2,7 +2,7 @@ export type Phonetics = {
     audio: string
     text?: string
     sourceUrl?: string 
-}[]
+}
 
 export type Meanings = {
     partOfSpeech: string
@@ -11,18 +11,18 @@ export type Meanings = {
     }[]
     synonyms: string []
     antonyms: string []
-}[]
+}
 
 type DictionaryAPI = {
     word: string
-    phonetics: Phonetics
-    meanings: Meanings
+    phonetics: Phonetics[]
+    meanings: Meanings[]
 }[]
 
 export type Dictionary = {
     word: string
-    phonetics: Phonetics
-    meanings: Meanings
+    phonetics: Phonetics[]
+    meanings: Meanings[]
 }
 
 export const getMeanings = async (word: string) => {

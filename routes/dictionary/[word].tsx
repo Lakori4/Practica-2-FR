@@ -14,10 +14,11 @@ export const handler:Handlers = {
 }
 
 export default (props:PageProps<Dictionary>) => {
-    const {word, meanings, phonetics} = props.data
+    const {meanings, phonetics} = props.data
     return(
-        <div>
-            
+        <div class="container_component">
+            {meanings.map(e => <MeaningsComponent key={e.partOfSpeech} {...e}/>)}
+            {phonetics.map(e => <PhoneticsComponent key={e.audio} {...e}/>)}
         </div>
     )
 }

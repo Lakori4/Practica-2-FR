@@ -2,3 +2,34 @@ body {
     background-color: black;
     color: white;
 }
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    h1 {
+        width: 100%;
+        text-align: center;
+    }
+    svg {
+        padding-right: 20px;
+    }
+    
+}
+
+.container_component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Phonetics_component {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid grey;
+}
