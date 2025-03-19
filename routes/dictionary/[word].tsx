@@ -35,11 +35,12 @@ export default (props:PageProps<Dictionary>) => {
 
     const {meanings, phonetics} = props.data
     const word = capitalize(props.params.word);
-    
+
     return(
         <div class="container_component">
             <h1>{word}</h1>
             {meanings.map(e => <MeaningsComponent {...e}/>)}
+            <h2>Phonetics</h2>
             {phonetics.map(e => <PhoneticsComponent {...e}/>)}
         </div>
     )

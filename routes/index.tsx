@@ -4,7 +4,7 @@ export const handler: Handlers = {
    POST: async (req, _ctx) => {
     const form = await req.formData();
     let word = form.get("word")
-    if (word === "") word = "troll" 
+    if (word === "") word = "sorry" 
     const headers = new Headers()
     headers.set("location", `/dictionary/${word}`);
     return new Response(null, {
