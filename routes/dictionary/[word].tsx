@@ -10,11 +10,19 @@ export const handler:Handlers = {
         const {word} = ctx.params;
         const dictionary:Dictionary = await getMeanings(word)
         return ctx.render(dictionary)
-
     }
 }
 
 export default (props:PageProps<Dictionary>) => {
+
+    if (!props.data) {
+        return (
+            <div>
+                <h1>The word <i>{props.params.word}</i> does not exist</h1>
+            </div>
+        )
+    }
+
     const {meanings, phonetics} = props.data
     return(
         <div class="container_component">

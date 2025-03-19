@@ -30,6 +30,7 @@ export type Dictionary = {
     word: string
     phonetics: Phonetics[]
     meanings: Meanings[]
+    title?: string
 }
 
 export const getMeanings = async (word: string) => {
