@@ -14,15 +14,6 @@ export const handler:Handlers = {
 }
 
 
-const capitalize = (word: string) => {
-
-    const firstLetter = word.charAt(0)
-    const firstLetterCap = firstLetter.toUpperCase()
-    const remainingLetters = word.slice(1)
-
-    return firstLetterCap + remainingLetters;
-}
-
 export default (props:PageProps<Dictionary>) => {
 
     if (!props.data) {
@@ -34,7 +25,7 @@ export default (props:PageProps<Dictionary>) => {
     }
 
     const {meanings, phonetics} = props.data
-    const word = capitalize(props.params.word);
+    const word = props.params.word;
 
     return(
         <div class="container_component">

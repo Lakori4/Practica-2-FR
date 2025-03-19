@@ -21,7 +21,7 @@ const MeaningsComponent:FunctionalComponent<Meanings> = (props) => {
                         {e.antonyms.map(e => { return <li>{e}</li>})}
                         </ul></div>: null 
                     }
-                    { e.example ? <h4>Example: {e.example}</h4>: null}                     
+                    { e.example ? <h4>Example: <i>{e.example}</i></h4>: null}                     
                 </li>})}
             </ol>
             

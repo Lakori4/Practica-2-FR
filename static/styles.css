@@ -47,12 +47,18 @@ body {
 
 .container_component {
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     flex-direction: column;
 
     h1 {
-        align-items: left;
+        align-self: center;
+        font-size: 40px;
+        text-transform: capitalize;
+        font-style: italic;
+    };
+    h2 {
+        padding: 0 2% 0;
     }
 }
 
@@ -68,8 +74,9 @@ body {
 .Meaning_component {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 3% 0;
+    align-items: left;
+    justify-content: left;
     flex-direction: column;
     border: 1px solid grey;
 }
