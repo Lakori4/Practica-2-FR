@@ -39,6 +39,7 @@ export default (props:PageProps<Dictionary>) => {
     return(
         <div class="container_component">
             <h1>{word}</h1>
+            <h2>Meanings</h2>
             {meanings.map(e => <MeaningsComponent {...e}/>)}
             <h2>Phonetics</h2>
             {phonetics.map(e => <PhoneticsComponent {...e}/>)}
