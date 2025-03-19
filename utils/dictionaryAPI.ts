@@ -8,8 +8,8 @@ export type Meanings = {
     partOfSpeech: string
     definitions: {
         definition: string
-        synonym: string [],
-        antonym: string [],
+        synonyms: string [],
+        antonyms: string [],
         example?: string
     }[]
     synonyms: string []
