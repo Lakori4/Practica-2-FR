@@ -5,16 +5,27 @@ body {
 
 .layout {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    h1 {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        text-align: center;
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+        svg {
+            padding-right: 20px;
+        }
     }
-    svg {
-        padding-right: 20px;
-    }
+
+    
+}
+
+.index-form {
     
 }
 
@@ -26,7 +37,7 @@ body {
 }
 
 .Phonetics_component {
-    width: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

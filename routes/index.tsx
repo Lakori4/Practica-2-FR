@@ -16,7 +16,7 @@ export const handler: Handlers = {
 
 export default function Home() {
   return (
-    <div>
+    <div class="index-form">
       <form method="POST">
         <input type="text" name="word" value="" />
         <button type="submit">Send</button>
